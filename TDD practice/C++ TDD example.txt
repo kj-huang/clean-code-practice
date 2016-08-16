@@ -1,0 +1,17 @@
+Test-driven development (TDD) ，是一個軟體設計方式，他依賴不斷重複的短期開發循環：
+1. 開發者先寫出錯誤的測資，定義需要的升級或新函式；
+2. 然後開發可以通過測試的程式碼；
+3. 最後重構成新的程式碼以符合標準。
+
+
+
+
+
+
+There are some recommended ways to implement tests:
+
+your test case should test only one thing;
+test case should be short;
+test should run fast, so it will possible to run it very often;
+each test should work independent on other tests. Broken test shouldn't prevent other tests from execution;
+tests shouldn't be dependent on order of their execution.
