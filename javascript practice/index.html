@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head >
+	<meta charset="utf-8"></meta>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</head>
+<body onload="getMyTime()">
+<div class="col-md-12" style="padding:8px 0px;"></div>
+<div class="col-md-12" style="padding:8px 0px;"></div>
+<div class="col-md-12" style="padding:8px 0px;"></div>
+
+<div class="col-md-12">
+    <div class="col-md-1">
+		<label for="id">hour</label>
+	</div>
+	<div class="col-md-5" >
+    	<div class="progress">
+  			<div id="hr" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" onload=""></div>
+		</div>
+	</div>
+	<div class="col-md-12" style="padding:8px 0px;"></div>
+</div>
+
+<div class="col-md-12">
+    <div class="col-md-1">
+		<label for="id">min</label>
+	</div>
+	<div class="col-md-5">
+    	<div class="progress">
+  			<div id="min" class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</div>
+	<div class="col-md-12" style="padding:8px 0px;"></div>
+</div>
+
+<div class="col-md-12">
+	<div class="col-md-1">
+		<label for="id">sec</label>
+	</div>
+	<div class="col-md-5">
+    	<div class="progress">
+  			<div id="sec" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+	</div>
+	<div class="col-md-12" style="padding:8px 0px;"></div>
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+
+	function getMyTime(){
+        var dt = new Date();
+
+        if (dt.getSeconds() < 10)
+            seconds = "0" + dt.getSeconds();
+        else
+            seconds = dt.getSeconds();
+
+        if (dt.getMinutes() < 10)
+            minutes = "0" + dt.getMinutes();
+        else
+            minutes = dt.getMinutes();
+
+        if (dt.getHours() < 10)
+            hours = "0" + dt.getHours();
+        else
+            hours = dt.getHours();
+
+        var sec = (((seconds / 60) * 100).toFixed(0)) + '%';
+        var min = (((minutes / 60) * 100).toFixed(0))+ '%';
+        var hr = (((hours / 24) * 100).toFixed(0)) + '%';
+		$('#hr').css('width', hr);
+        $('#hr').html(hr);
+        $('#min').css('width', min);
+        $('#min').html(min);
+        $('#sec').css('width', sec);
+        $('#sec').html(sec);
+
+        var t = setTimeout(getMyTime, 500);
+	}
+        //setTimeout(function(){window.location.reload(1);}, 1000);
+
+</script>
+</html>
