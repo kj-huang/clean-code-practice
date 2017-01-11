@@ -1,0 +1,3 @@
+typeface : refer to specific design alphabet, you see , each typeface  contain type styles
+font : you choose
+type family : 
